@@ -1,12 +1,15 @@
 import { MenuOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 import { Badge, Button, Input, PageHeader, Space } from 'antd';
 import { useMoralis } from "react-moralis";
+import { Link } from 'react-router-dom';
 import bookStore from '../images/bookstore.png';
 import amazonLogo from '../images/logo.png';
 import USA from '../images/usa.png';
 import './Header.css';
 
 const {Search} = Input;
+const categories = ["Comics", "Dictionaries", "Novels", "Fantasy", "Horror", "Adventure"];
+
 const Header = () => {
   const { authenticate } = useMoralis();
   return(
@@ -53,8 +56,12 @@ const Header = () => {
             Categories
           </Space>
           {
-            categories.map(category => {
-              return 
+            categories.map((category, index) => {
+              return (
+                <Link to="/categories" state={category} key={index} className='categories'>
+                {category}
+                </Link>
+              )
             })
           }
         </Space>

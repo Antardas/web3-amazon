@@ -2,7 +2,6 @@
 
 .container {
   overflow: hidden;
-  max-width: 100vw !important;
 }
 .ant-page-header {
   background-color: #131921;

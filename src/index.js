@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from "react-router-dom";
 import { MoralisProvider } from "react-moralis";
-
+import { BrowserRouter } from "react-router-dom";
+import App from './App';
+import './index.css';
+import reportWebVitals from './reportWebVitals';
+console.log(process.env.APP_ID);
 
 ReactDOM.render(
   <React.StrictMode>
-    <MoralisProvider appId="xxxxxxxx" serverUrl="xxxxxxxx">
+    <MoralisProvider appId='DBZljNCpRwBCrXIi1Ve823ROHyxo32ATvhOloWwR' serverUrl='https://ii6twhwaocxw.usemoralis.com:2053/server'>
       <BrowserRouter>
         <App />
       </BrowserRouter>

@@ -11,7 +11,7 @@ const {Search} = Input;
 const categories = ["Comics", "Dictionaries", "Novels", "Fantasy", "Horror", "Adventure"];
 
 const Header = () => {
-  const { authenticate } = useMoralis();
+  const { authenticate, account } = useMoralis();
   return(
     <div className="site-page-header-ghost-wrapper">
       <PageHeader
@@ -32,7 +32,7 @@ const Header = () => {
              type="primary"
              className='login'
              onClick={() => authenticate()}>
-            Login with Metamask
+            {account ? <span>{account.slice(0,5)}...</span> : <span>Login with Metamask</span>}
             </Button>
           <Space size={'large'}>
             <Badge count={0} showZero >
